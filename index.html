@@ -154,26 +154,6 @@
       line-height: 1.6;
     }
     
-    /* VIDEO EMBED */
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      background: #000;
-      border-radius: 8px;
-      margin: 1.5rem 0;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    
     /* ASSESSMENT TABLE */
     .assessment-table {
       width: 100%;
@@ -270,6 +250,107 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(201,149,58,0.3);
     }
+    .download-btn-outline {
+      display: inline-block;
+      margin-top: 0.8rem;
+      margin-right: 0.6rem;
+      padding: 0.65rem 1.2rem;
+      background: transparent;
+      color: var(--gold-light);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      border: 1px solid rgba(201,149,58,0.5);
+    }
+    .download-btn-outline:hover {
+      background: rgba(201,149,58,0.12);
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+    .resource-downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .mindmap-img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin: 1.5rem 0 0.5rem;
+      background: #fff;
+    }
+    .mindmap-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    /* VIDEO EMBED */
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin: 1.5rem 0 0.4rem;
+      background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .video-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    /* RESOURCES SECTION */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .resource-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .resource-card .res-week {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .resource-card .res-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .resource-card .res-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .resource-card a.download-btn-outline {
+      margin-top: auto;
+      text-align: center;
+    }
     
     /* FOOTER */
     footer {
@@ -309,6 +390,7 @@
     <a href="#week3">Week 3</a>
     <a href="#week4">Week 4</a>
     <a href="#outline">Unit Outline</a>
+    <a href="#resources">Resources</a>
   </div>
 </nav>
 
@@ -426,13 +508,6 @@
       <h3>How to Remember Everything You Read</h3>
     </div>
     <div class="week-content">
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/okHkUIW46ks" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-      </div>
-      
       <p>PACER is a study method that helps you retain information from textbooks, articles, and notes. It stands for:</p>
       
       <ul style="margin-top: 1.5rem;">
@@ -446,6 +521,11 @@
       <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(201,149,58,0.08); border-radius: 6px;">
         <strong>Why it works:</strong> PACER transforms passive reading into active learning. Your brain remembers information better when you engage with it multiple ways — seeing it, writing it, explaining it, and reviewing it.
       </p>
+
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/okHkUIW46ks" title="PACER Study Method" allowfullscreen></iframe>
+      </div>
+      <p class="video-caption">Watch: The PACER study method explained</p>
     </div>
   </div>
 
@@ -520,6 +600,13 @@
           <p style="margin-top: 0.5rem;">The spatial level of study: local (neighborhood), regional, national, international, or global. Same topic can be studied at different scales.</p>
         </div>
       </div>
+
+      <img src="resources/SPICESS_Mindmap.png" alt="SPICESS Geographical Concepts Mind Map" class="mindmap-img">
+      <p class="mindmap-caption">SPICESS Mind Map — all seven geographical concepts and their key ideas</p>
+
+      <div class="resource-downloads">
+        <a href="resources/SPICESS.pdf" download class="download-btn-outline">⬇ SPICESS Notes (PDF)</a>
+      </div>
     </div>
   </div>
 </section>
@@ -538,13 +625,6 @@
       <h3>BOLTSS — Essential Features of Every Map</h3>
     </div>
     <div class="week-content">
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/B14Gtm2Z_70" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-      </div>
-      
       <p>Every good map needs these six features to be clear, accurate, and useful. Remember them with the acronym BOLTSS:</p>
       
       <ul style="margin-top: 1.5rem;">
@@ -602,6 +682,16 @@
       <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(201,149,58,0.08); border-radius: 6px;">
         <strong>Memory trick:</strong> "In the house, up the stairs" — Go across (eastings) FIRST, then up (northings).
       </p>
+
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/B14Gtm2Z_70" title="Why North is Up on Maps" allowfullscreen></iframe>
+      </div>
+      <p class="video-caption">Watch: Why is North always at the top of maps?</p>
+
+      <div class="resource-downloads">
+        <a href="resources/TYPES_OF_MAPS_AND_BOLTSS.pdf" download class="download-btn-outline">⬇ Types of Maps &amp; BOLTSS (PDF)</a>
+        <a href="resources/Grid_and_Area_Referencing.pdf" download class="download-btn-outline">⬇ Grid &amp; Area Referencing (PDF)</a>
+      </div>
     </div>
   </div>
 </section>
@@ -671,6 +761,11 @@
           The OECD now conducts life-satisfaction surveys to capture subjective factors alongside objective measures.
         </p>
       </div>
+
+      <div class="resource-downloads">
+        <a href="resources/how_do_we_measure_liveability.pdf" download class="download-btn-outline">⬇ How Do We Measure Liveability? (PDF)</a>
+        <a href="resources/LIVEABILITY.pdf" download class="download-btn-outline">⬇ Liveability Mind Map (PDF)</a>
+      </div>
     </div>
   </div>
 
@@ -732,6 +827,62 @@
   </div>
 </section>
 
+<!-- RESOURCES -->
+<div class="divider"></div>
+<section class="section" id="resources">
+  <div class="section-header">
+    <div class="section-label">Resources</div>
+    <h2>All Course Resources</h2>
+    <p>Download study notes, mind maps, and reference sheets for every week of the term.</p>
+  </div>
+
+  <div class="resources-grid">
+
+    <div class="resource-card">
+      <span class="res-week">Week 2</span>
+      <span class="res-title">SPICESS Notes</span>
+      <p class="res-desc">Detailed notes on all seven geographical concepts — Space, Place, Interconnection, Change, Environment, Sustainability, Scale.</p>
+      <a href="resources/SPICESS.pdf" download class="download-btn-outline">⬇ Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="res-week">Week 3</span>
+      <span class="res-title">Types of Maps &amp; BOLTSS</span>
+      <p class="res-desc">Reference guide covering physical, political, topographic, thematic, choropleth maps and the six essential BOLTSS features.</p>
+      <a href="resources/TYPES_OF_MAPS_AND_BOLTSS.pdf" download class="download-btn-outline">⬇ Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="res-week">Week 3</span>
+      <span class="res-title">Grid &amp; Area Referencing</span>
+      <p class="res-desc">Step-by-step guide to four-figure area references (AR) and six-figure grid references (GR) with worked examples.</p>
+      <a href="resources/Grid_and_Area_Referencing.pdf" download class="download-btn-outline">⬇ Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="res-week">Week 4</span>
+      <span class="res-title">How Do We Measure Liveability?</span>
+      <p class="res-desc">Notes on objective and subjective liveability factors, EIU rankings, and what makes cities liveable worldwide.</p>
+      <a href="resources/how_do_we_measure_liveability.pdf" download class="download-btn-outline">⬇ Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="res-week">Week 4</span>
+      <span class="res-title">Liveability Mind Map</span>
+      <p class="res-desc">Visual mind map summarising subjective and objective liveability factors — great for quick revision before the CAT.</p>
+      <a href="resources/LIVEABILITY.pdf" download class="download-btn-outline">⬇ Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="res-week">Full Term</span>
+      <span class="res-title">Unit Outline</span>
+      <p class="res-desc">Complete 9-week program with all learning intentions, vocabulary, textbook references, and assessment details.</p>
+      <a href="Year_7_Geography_Unit_Outline.docx" download class="download-btn-outline">⬇ Download DOCX</a>
+    </div>
+
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -743,7 +894,7 @@
 
 <script>
 // Navigation active state
-const sections = ['contents', 'dates', 'vocab', 'week1', 'week2', 'week3', 'week4', 'outline'];
+const sections = ['contents', 'dates', 'vocab', 'week1', 'week2', 'week3', 'week4', 'outline', 'resources'];
 const navLinks = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
