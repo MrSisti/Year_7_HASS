@@ -154,6 +154,26 @@
       line-height: 1.6;
     }
     
+    /* VIDEO EMBED */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    
     /* ASSESSMENT TABLE */
     .assessment-table {
       width: 100%;
@@ -406,6 +426,13 @@
       <h3>How to Remember Everything You Read</h3>
     </div>
     <div class="week-content">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/okHkUIW46ks" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+      </div>
+      
       <p>PACER is a study method that helps you retain information from textbooks, articles, and notes. It stands for:</p>
       
       <ul style="margin-top: 1.5rem;">
@@ -511,6 +538,13 @@
       <h3>BOLTSS — Essential Features of Every Map</h3>
     </div>
     <div class="week-content">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/B14Gtm2Z_70" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+      </div>
+      
       <p>Every good map needs these six features to be clear, accurate, and useful. Remember them with the acronym BOLTSS:</p>
       
       <ul style="margin-top: 1.5rem;">
