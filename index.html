@@ -314,6 +314,101 @@
       margin-bottom: 1rem;
     }
 
+    /* SLIDESHOW */
+    .slideshow {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .slideshow-track {
+      position: relative;
+    }
+    .slide {
+      display: none;
+      padding: 2rem;
+      min-height: 220px;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .slide.active { display: flex; }
+    .slide-number {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .slide h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+    }
+    .slide p, .slide li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .slide ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+    .slide li { margin-bottom: 0.4rem; }
+    .slideshow-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      background: rgba(0,0,0,0.15);
+    }
+    .slide-btn {
+      background: transparent;
+      border: 1px solid rgba(201,149,58,0.4);
+      color: var(--gold-light);
+      padding: 0.4rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+    }
+    .slide-btn:hover { background: rgba(201,149,58,0.12); border-color: var(--gold); }
+    .slide-btn:disabled { opacity: 0.3; cursor: default; }
+    .slide-counter { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* READING */
+    .reading-toggle {
+      background: transparent;
+      border: 1px solid rgba(201,149,58,0.4);
+      color: var(--gold-light);
+      padding: 0.65rem 1.4rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+      margin-top: 1.2rem;
+      display: block;
+    }
+    .reading-toggle:hover { background: rgba(201,149,58,0.1); border-color: var(--gold); }
+    .reading-body {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1.8rem;
+      background: var(--navy-light);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.9rem;
+      line-height: 1.9;
+      color: var(--text-secondary);
+    }
+    .reading-body.open { display: block; }
+    .reading-body p { margin-bottom: 1.1rem; }
+    .reading-body p:last-child { margin-bottom: 0; }
+
     /* RESOURCES SECTION */
     .resources-grid {
       display: grid;
@@ -536,7 +631,7 @@
       </p>
 
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/okHkUIW46ks" title="PACER Study Method" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/okHkUIW46ks" title="PACER Study Method" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <p class="video-caption">Watch: The PACER study method explained</p>
     </div>
@@ -697,7 +792,7 @@
       </p>
 
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/B14Gtm2Z_70" title="Why North is Up on Maps" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/B14Gtm2Z_70" title="Why North is Up on Maps" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <p class="video-caption">Watch: Why is North always at the top of maps?</p>
 
@@ -933,14 +1028,192 @@
 
   <div class="week-card">
     <div class="week-header">
-      <span class="week-badge">Extension</span>
-      <h3>Extension Reading</h3>
+      <span class="week-badge">Slides</span>
+      <h3>Class Presentation — Why Does WA Have the Best Climate?</h3>
     </div>
     <div class="week-content">
-      <p>Your teacher has written an extension reading about the Leeuwin Current and the South-West of WA — exploring the landscape through literature, the Noongar seasons, and the deep history of this part of Australia. It's available on Compass.</p>
-      <p style="margin-top: 1rem; padding: 1rem; background: rgba(201,149,58,0.08); border-radius: 6px;">
-        <strong>Forced Analogy task:</strong> According to PACER, when we learn <em>conceptual</em> information, we must connect it to something we already know. In pairs or threes, create a brainstorm that compares the water cycle and evaporation to another subject of your choice. Your teacher will model this first.
-      </p>
+      <p>Step through the slides from the lesson below:</p>
+
+      <div class="slideshow">
+        <div class="slideshow-track">
+
+          <div class="slide active">
+            <span class="slide-number">Slide 1 of 13</span>
+            <h4>Why does Western Australia have the best climate in Australia?</h4>
+            <p>Think for a minute. Share with a partner for two minutes. Then share with the class.</p>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 2 of 13</span>
+            <h4>EQ: What is Frontal Rainfall? / Why does it rain so much in Perth?</h4>
+            <p><strong style="color:var(--text-primary)">Learning Intention:</strong> To understand the unique attributes of Perth's weather.</p>
+            <p style="margin-top:0.8rem"><strong style="color:var(--text-primary)">You will succeed if you…</strong></p>
+            <ul>
+              <li>Partake in class discussions</li>
+              <li>Take down the definitions in class</li>
+              <li>Copy down the frontal rainfall map</li>
+              <li>Complete the experiment of evaporation and condensation</li>
+              <li>Complete the brainstorm / forced analogy on evaporation</li>
+            </ul>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 3 of 13</span>
+            <h4>Discussion: The Western Coastlines</h4>
+            <p>What do you notice about the areas on the west coast of continents around the world?</p>
+            <p style="margin-top:0.8rem; padding:0.8rem; background:rgba(201,149,58,0.08); border-radius:6px">Think-Pair-Share: Look at a world map. What biomes sit on the western coasts at 30–45° north and south?</p>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 4 of 13</span>
+            <h4>What about Western Australia?</h4>
+            <p>Perth sits at 31° south. By the logic of the previous slide, it should be a desert. So why isn't it?</p>
+            <p style="margin-top:0.8rem">And why does the South-West have the biggest trees in the world — Karri trees — starting from 34° south?</p>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 5 of 13</span>
+            <h4>The Horse Latitudes</h4>
+            <p>Roughly 30–45° north and south of the equator sit the Horse Latitudes — named because horses struggle to survive in the dry zones between these latitudes and the equator in Africa.</p>
+            <ul>
+              <li>Almost no energy or pressure in the air → very little rain</li>
+              <li>Too far from the poles for fast rotation-driven winds</li>
+              <li>Too far from the tropics for high-pressure storms and cyclones</li>
+            </ul>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 6 of 13</span>
+            <h4>Deserts</h4>
+            <p>Almost all the world's deserts are found at these latitudes:</p>
+            <ul>
+              <li>Sahara &amp; Namib — western coast of Africa</li>
+              <li>Atacama — western coast of South America</li>
+              <li>Death Valley — western coast of North America</li>
+            </ul>
+            <p style="margin-top:0.8rem">Perth at 31° south should be the same. Something is different here.</p>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 7 of 13</span>
+            <h4>The Leeuwin Current</h4>
+            <p>The Leeuwin Current drives life through Western Australia:</p>
+            <ul>
+              <li>The <strong style="color:var(--text-primary)">longest coastal sea current</strong> in the world — and one of the fastest</li>
+              <li>Flows from <strong style="color:var(--text-primary)">Indonesia</strong>, wraps around Cape Leeuwin (Augusta), finishes in Tasmania</li>
+              <li>Starts in early Autumn and evaporates seawater into massive rain clouds</li>
+              <li>Creates huge storm fronts — this is called <strong style="color:var(--text-primary)">frontal rainfall</strong></li>
+              <li>Accounts for <strong style="color:var(--text-primary)">80% of all rain in WA</strong></li>
+            </ul>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 8 of 13</span>
+            <h4>The Noongar Seasons and Life in WA</h4>
+            <p>The Leeuwin Current has shaped the Noongar seasons — the six-season calendar of the traditional custodians of the South-West — for tens of thousands of years.</p>
+            <p style="margin-top:0.8rem">Think-Pair-Share: What is your favourite season and why? Has the Leeuwin Current shaped it?</p>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 9 of 13</span>
+            <h4>The Leeuwin Current Through SPICESS — Part 1</h4>
+            <ul>
+              <li><strong style="color:var(--text-primary)">Space:</strong> Where rain fell shaped how WA organised itself — the South-West and Wheatbelt became the most productive areas.</li>
+              <li><strong style="color:var(--text-primary)">Place:</strong> The meaning of the South-West has been shaped by the current for tens of thousands of years, creating the boundaries of Whadjuk Noongar country.</li>
+              <li><strong style="color:var(--text-primary)">Interconnection:</strong> Indigenous Australians moved and migrated based on the current. It also provided lumber and farming seasons for early settlers.</li>
+            </ul>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 10 of 13</span>
+            <h4>The Leeuwin Current Through SPICESS — Part 2</h4>
+            <ul>
+              <li><strong style="color:var(--text-primary)">Change &amp; Environment:</strong> Climate change is altering the current. The Indian Ocean Dipole can cool the ocean, reducing rainfall, increasing drought, and changing how and where people live.</li>
+              <li><strong style="color:var(--text-primary)">Sustainability &amp; Scale:</strong> The current affects things locally (Perth's rainfall), nationally (WA's forests and economy), and internationally — with some sections of the current being World Heritage Sites due to their importance to whale breeding.</li>
+            </ul>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 11 of 13</span>
+            <h4>Vocabulary</h4>
+            <ul>
+              <li><strong style="color:var(--text-primary)">Evaporation:</strong> The process where water becomes a gas (water vapour) as it heats. This can occur below boiling temperature and is the first step of the water cycle.</li>
+              <li style="margin-top:0.6rem"><strong style="color:var(--text-primary)">Precipitation:</strong> The physical act of rainfall. After water evaporates and rises into the sky, cools and condenses into clouds, it continues to cool, become heavy, and falls to the ground as rain, snow, or hail.</li>
+            </ul>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 12 of 13</span>
+            <h4>Make Your Own Water Cycle</h4>
+            <p><strong style="color:var(--text-primary)">Materials:</strong> Zip-lock bag · Water · Blue food colouring · Permanent marker · Masking tape</p>
+            <p style="margin-top:0.8rem"><strong style="color:var(--text-primary)">Steps:</strong></p>
+            <ul>
+              <li>Draw the water cycle map from Compass on your bag</li>
+              <li>Write your group's name on the map and the bag</li>
+              <li>Add water and food dye, seal it</li>
+              <li>Tape it to your window</li>
+              <li>Watch condensation form throughout the week!</li>
+            </ul>
+          </div>
+
+          <div class="slide">
+            <span class="slide-number">Slide 13 of 13</span>
+            <h4>Forced Analogy Brainstorm</h4>
+            <p>According to PACER, when we learn <em>conceptual</em> information, we must connect it to something we already know.</p>
+            <p style="margin-top:0.8rem">A <strong style="color:var(--text-primary)">forced analogy</strong> compares a new concept to a completely different subject to help it stick.</p>
+            <p style="margin-top:0.8rem">In pairs or threes: create a brainstorm comparing the water cycle / evaporation to another subject of your choice. Your teacher will model this first.</p>
+          </div>
+
+        </div>
+        <div class="slideshow-controls">
+          <button class="slide-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← Prev</button>
+          <span class="slide-counter" id="slideCounter">1 / 13</span>
+          <button class="slide-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+        </div>
+      </div>
+
+      <div class="resource-downloads">
+        <a href="resources/Why_does_Western_Australia_have_the_best_climate.pptx" download class="download-btn-outline">⬇ Download Presentation (PPTX)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-badge">Extension Reading</span>
+      <h3>The Leeuwin Current — Extension Reading</h3>
+    </div>
+    <div class="week-content">
+      <p>Your teacher has written a literary piece about the Leeuwin Current, the Karri forests, the Noongar seasons, and the deep history of the South-West. It explores the landscape through story, geography, and personal reflection.</p>
+      <p style="margin-top:0.8rem; font-size:0.85rem; color:var(--text-muted)">Recommended for students who want to go deeper — and for anyone who has driven Caves Road.</p>
+
+      <button class="reading-toggle" onclick="toggleReading(this)">📖 Read the Extension Text ▾</button>
+
+      <div class="reading-body">
+        <p>When teaching, I always look for texts with a dolly zoom.</p>
+        <p>Probably the most famous of cinematic techniques, it is an easy manoeuvre for students to recognise and leads them to discovering (or rediscovering) Spielberg through <em>Jaws</em> and Hitchcock through <em>Vertigo</em>. It also provides many students with their first visceral feeling within camera movement, so they can end up appreciating the finer craft of cinematography and editing that has come to dominate film making since the New Wave.</p>
+        <p>The dolly zoom's effect is in stark contrast to its deployment, which is extremely simple and can be copied by any student with steady feet and a DSLR camera. As the camera closes in on a dolly, the cameraman zooms in the opposite direction of the push or pull. This creates two effects: either it feels like the world is closing in around you (dolly in, zoom out), or it feels like you are having an out-of-body experience (dolly out, zoom in) — hitherto known as the Vertigo Effect.</p>
+        <p>The reason I start with this is to pre-load you before I introduce the comparison in the next paragraph — so if you have not seen either of these films, or are not aware of the technique, you can watch them before we continue.</p>
+        <p>Driving through Caves Road in the South-West of Australia has the same white-knuckle feel as a particularly well-crafted dolly zoom. As you cross 34 degrees south of the equator — around 150 kilometres south of Perth — you enter Karri country. These towering giants are a ghostly remnant of a, sadly, bygone era; their height may rise to 85 metres, as attested by The Stewart Tree, a 350-year-old Karri in Manjimup.</p>
+        <p>Caves Road is off-Broadway in the South-West, an area becoming more and more Broadway by Western Australian standards. As I write this, in 2026, Caves Road still holds the sort of gnostic horror that intrigued me as a kid, as the Karri trees — to a western eye — seem to be left undisturbed and may encroach on the soft, orange bauxite edges of the road.</p>
+        <p>As you drive, you grip the steering wheel tight. Even skilled drivers have to concentrate especially hard on the winding and dipping roads. And as you stare ahead, these Karri trees race past your vision. Slowly at first, and then faster and faster as they approach. With the intimacy of the doubled lines on the centre of the road, you feel your spirit become engaged in a primordial battle for control — as a doubling of the Vertigo and Jaws effect takes hold and 15 million tonnes of Karri seem to enclose around you.</p>
+        <p>Karri made the South-West rich. Its lumber was exceptionally strong, and its height and breadth made it unrivalled in the Southern Hemisphere. Redwoods in North America are routinely used as metaphors for resilience, strength, age, and wisdom — yet they are brittle and weak in comparison with Karri. Karri's extreme advantages created a bitter divide between Western and Eastern Australia at Federation, as the removal of tariffs threatened to swamp WA's Jarrah and Karri industries.</p>
+        <p>Karri's strength comes from the ancient land we stand on, and from a unique feature of the Western Australian coast.</p>
+        <p>Western Australia stands on the western side of the continent facing the Indian Ocean. It bucks the trend of most western coastlines at the Horse Latitudes — roughly 30 degrees north and south of the equator — which tend to be extremely dry, wedged between the westerlies and the trade winds. Around these latitudes across the world we see: the Namib and Sahara deserts on the western coast of Africa, and the Atacama Desert and Death Valley in the Americas.</p>
+        <p>What the western coast of Australia has over every other continent is a deep warm current that has shaped the Noongar seasons — the traditional custodians of this land.</p>
+        <p>The current is the world's longest coastal current, and its tentacles hug the western coast as it is pushed out from the tropics by the unstable Indonesian Throughflow — itself just trying to find an even keel through its 17,000-island archipelago. The current wraps around its namesake, Cape Leeuwin in Augusta, and finds its way across the Southern Ocean to Tasmania, providing breeding grounds for whales, salmon, and crayfish which, along with Karri, made colonial Australia an economic darling that punched above its weight.</p>
+        <p>The Noongar seasons are shaped by the current: <strong>Djeran</strong> — when the current starts — a time of cooler weather and movement away from the coast into the forests; <strong>Makuru</strong> — the heaviest rainfall — where animals gather and breeding begins; <strong>Djilba</strong> — where rainfall replenishes the soil and stunning wildflowers take over the continent; <strong>Kambarang</strong> — the current slows and dies — a return of native reptiles and migration back to the coast; <strong>Birak</strong> — a season of fishing and hunting; and <strong>Bunuru</strong> — the hottest part of the year, when crabs grow to a size worth catching, and just before the current starts up again.</p>
+        <p>My grandfather's way of summing up the Western Australian seasons was simpler, but no less refined after eighty years of living it: <em>good footy weather</em> and <em>bad footy weather</em>. His favourite time of the year was Djeran — crisp Saturday mornings, not cold enough for a beanie, rain permitted if soft, with little wind to incentivise good kicking.</p>
+        <p>As the rain pelts down on this ancient land — the oldest land in the world — we see a sense of rebirth and rejuvenation that cannot be contained by human language or metaphor. It is beyond biblical: the sheer amount of striving and survival mixed with what we assume to be good fortune is staggering to behold; and whether sentiency and agency is placed upon nature, God, The Dreaming, or something between all three, depends on the observer.</p>
+        <p>It is somehow the most natural thing in the world — and something seemingly unnatural also.</p>
+        <p>And you feel it. You feel it in your bones in this country. I have been all over the world, but I have never been as cold as when I camped in the Porongurups or along the Blackwood. There is always a sense you are being watched here; and it is when you are truly alone physically, you learn that you can never be truly alone spiritually. They are always there, and they never leave you.</p>
+        <p>The road no longer stretches before me; the dolly zoom is replaced by whip pans and fast cuts as we move from New Wave to twenty-first century film making. The forest constricts like an accordion, and I remember the sheer unfathomable nature of this land — and how it does not care for me at all.</p>
+        <p>The road and the forest: two gothic characters in their own way — sublime and unforgiving, bleak but romantic, scornful lovers who provide and devastate. All we can do is hold on with our aforementioned white knuckles and hope we can someday live to tell the tale.</p>
+      </div>
+
+      <div class="resource-downloads" style="margin-top:1.2rem">
+        <a href="resources/Extension_Reading_Year_7_HASS_.docx" download class="download-btn-outline">⬇ Download Reading (DOCX)</a>
+      </div>
     </div>
   </div>
 
@@ -1057,8 +1330,29 @@ window.addEventListener('scroll', () => {
       link.classList.add('active');
     }
   });
-});
-</script>
+// Slideshow
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function changeSlide(dir) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(currentSlide + dir, totalSlides - 1));
+  slides[currentSlide].classList.add('active');
+  document.getElementById('prevBtn').disabled = currentSlide === 0;
+  document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+  document.getElementById('slideCounter').textContent = `${currentSlide + 1} / ${totalSlides}`;
+}
+
+// Reading toggle
+function toggleReading(btn) {
+  const body = btn.nextElementSibling;
+  body.classList.toggle('open');
+  btn.textContent = body.classList.contains('open')
+    ? '📖 Hide Reading ▴'
+    : '📖 Read the Extension Text ▾';
+}
+
 
 </body>
 </html>
