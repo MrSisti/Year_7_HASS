@@ -154,26 +154,6 @@
       line-height: 1.6;
     }
     
-    /* VIDEO EMBED */
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      background: #000;
-      border-radius: 8px;
-      margin: 1.5rem 0;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    
     /* ASSESSMENT TABLE */
     .assessment-table {
       width: 100%;
@@ -270,6 +250,107 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(201,149,58,0.3);
     }
+    .download-btn-outline {
+      display: inline-block;
+      margin-top: 0.8rem;
+      margin-right: 0.6rem;
+      padding: 0.65rem 1.2rem;
+      background: transparent;
+      color: var(--gold-light);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      border: 1px solid rgba(201,149,58,0.5);
+    }
+    .download-btn-outline:hover {
+      background: rgba(201,149,58,0.12);
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+    .resource-downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .mindmap-img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin: 1.5rem 0 0.5rem;
+      background: #fff;
+    }
+    .mindmap-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    /* VIDEO EMBED */
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin: 1.5rem 0 0.4rem;
+      background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .video-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    /* RESOURCES SECTION */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .resource-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .resource-card .res-week {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .resource-card .res-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .resource-card .res-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .resource-card a.download-btn-outline {
+      margin-top: auto;
+      text-align: center;
+    }
     
     /* FOOTER */
     footer {
@@ -308,7 +389,9 @@
     <a href="#week2">Week 2</a>
     <a href="#week3">Week 3</a>
     <a href="#week4">Week 4</a>
+    <a href="#week7">Week 7</a>
     <a href="#outline">Unit Outline</a>
+    <a href="#resources">Resources</a>
   </div>
 </nav>
 
@@ -343,6 +426,8 @@
         <li style="margin-bottom: 1rem;"><strong>Week 2:</strong> What are SPICESS?</li>
         <li style="margin-bottom: 1rem;"><strong>Week 3:</strong> What are BOLTSS and grid referencing?</li>
         <li style="margin-bottom: 1rem;"><strong>Week 4:</strong> How do we measure liveability?</li>
+        <li style="margin-bottom: 1rem;"><strong>Weeks 5–6:</strong> Revision &amp; Assessment</li>
+        <li style="margin-bottom: 1rem;"><strong>Week 7:</strong> What is the Water Cycle?</li>
       </ul>
     </div>
   </div>
@@ -409,6 +494,16 @@
       <dt>Subjective Factors</dt>
       <dd>Personal, emotional, spiritual aspects of liveability that can't be easily measured: spiritual connections, sentimental attachments, personal preferences.</dd>
     </div>
+
+    <div class="vocab-term">
+      <dt>Evaporation</dt>
+      <dd>The process where water becomes a gas (water vapour) as it heats. This can occur below boiling temperature and is the first step of the water cycle.</dd>
+    </div>
+
+    <div class="vocab-term">
+      <dt>Precipitation</dt>
+      <dd>The physical act of rainfall. After water evaporates and rises into the sky, cools and condenses into clouds, it continues to cool, become heavy, and then falls to the ground as rain, snow, or hail.</dd>
+    </div>
   </div>
 </section>
 
@@ -426,13 +521,6 @@
       <h3>How to Remember Everything You Read</h3>
     </div>
     <div class="week-content">
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/okHkUIW46ks" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-      </div>
-      
       <p>PACER is a study method that helps you retain information from textbooks, articles, and notes. It stands for:</p>
       
       <ul style="margin-top: 1.5rem;">
@@ -446,6 +534,11 @@
       <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(201,149,58,0.08); border-radius: 6px;">
         <strong>Why it works:</strong> PACER transforms passive reading into active learning. Your brain remembers information better when you engage with it multiple ways — seeing it, writing it, explaining it, and reviewing it.
       </p>
+
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/okHkUIW46ks" title="PACER Study Method" allowfullscreen></iframe>
+      </div>
+      <p class="video-caption">Watch: The PACER study method explained</p>
     </div>
   </div>
 
@@ -520,6 +613,13 @@
           <p style="margin-top: 0.5rem;">The spatial level of study: local (neighborhood), regional, national, international, or global. Same topic can be studied at different scales.</p>
         </div>
       </div>
+
+      <img src="resources/SPICESS_Mindmap.png" alt="SPICESS Geographical Concepts Mind Map" class="mindmap-img">
+      <p class="mindmap-caption">SPICESS Mind Map — all seven geographical concepts and their key ideas</p>
+
+      <div class="resource-downloads">
+        <a href="resources/SPICESS.pdf" download class="download-btn-outline">⬇ SPICESS Notes (PDF)</a>
+      </div>
     </div>
   </div>
 </section>
@@ -538,13 +638,6 @@
       <h3>BOLTSS — Essential Features of Every Map</h3>
     </div>
     <div class="week-content">
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/B14Gtm2Z_70" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-      </div>
-      
       <p>Every good map needs these six features to be clear, accurate, and useful. Remember them with the acronym BOLTSS:</p>
       
       <ul style="margin-top: 1.5rem;">
@@ -585,7 +678,7 @@
       <p><strong>Area Reference (AR):</strong> Four-figure reference to find a general area.</p>
       <ul style="margin-top: 0.8rem; margin-bottom: 1.5rem;">
         <li>Find the square the object is in</li>
-        <li>Put a dot at the bottom-left corner</li>
+        <li>Put a dot at the bottom-right corner</li>
         <li>Format: AR + easting number + northing number</li>
         <li>Example: AR 2813</li>
       </ul>
@@ -602,6 +695,16 @@
       <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(201,149,58,0.08); border-radius: 6px;">
         <strong>Memory trick:</strong> "In the house, up the stairs" — Go across (eastings) FIRST, then up (northings).
       </p>
+
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/B14Gtm2Z_70" title="Why North is Up on Maps" allowfullscreen></iframe>
+      </div>
+      <p class="video-caption">Watch: Why is North always at the top of maps?</p>
+
+      <div class="resource-downloads">
+        <a href="resources/TYPES_OF_MAPS_AND_BOLTSS.pdf" download class="download-btn-outline">⬇ Types of Maps &amp; BOLTSS (PDF)</a>
+        <a href="resources/Grid_and_Area_Referencing.pdf" download class="download-btn-outline">⬇ Grid &amp; Area Referencing (PDF)</a>
+      </div>
     </div>
   </div>
 </section>
@@ -671,6 +774,11 @@
           The OECD now conducts life-satisfaction surveys to capture subjective factors alongside objective measures.
         </p>
       </div>
+
+      <div class="resource-downloads">
+        <a href="resources/how_do_we_measure_liveability.pdf" download class="download-btn-outline">⬇ How Do We Measure Liveability? (PDF)</a>
+        <a href="resources/LIVEABILITY.pdf" download class="download-btn-outline">⬇ Liveability Mind Map (PDF)</a>
+      </div>
     </div>
   </div>
 
@@ -706,6 +814,138 @@
   </div>
 </section>
 
+<!-- WEEK 7 -->
+<div class="divider"></div>
+<section class="section" id="week7">
+  <div class="section-header">
+    <div class="section-label">Week 7</div>
+    <h2>What is the Water Cycle?</h2>
+    <p>Understanding how water moves through the Earth's systems — and why Western Australia has such a unique climate.</p>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-badge">Core Concept</span>
+      <h3>The Water Cycle</h3>
+    </div>
+    <div class="week-content">
+      <p>The water cycle describes the continuous movement of water through the Earth's systems. It has three key stages:</p>
+
+      <div style="margin-top: 1.5rem; display: grid; gap: 1.2rem;">
+        <div style="padding: 1.2rem; background: rgba(74,144,164,0.1); border-left: 3px solid #4a90a4; border-radius: 6px;">
+          <strong style="color: #4a90a4; font-size: 1.05rem;">1. Evaporation</strong>
+          <p style="margin-top: 0.5rem;">Water on the Earth's surface — oceans, rivers, lakes — heats up and turns into water vapour (a gas). This can happen even below boiling point. The water vapour rises into the atmosphere.</p>
+        </div>
+        <div style="padding: 1.2rem; background: rgba(74,143,106,0.1); border-left: 3px solid #4a8f6a; border-radius: 6px;">
+          <strong style="color: #4a8f6a; font-size: 1.05rem;">2. Condensation</strong>
+          <p style="margin-top: 0.5rem;">As water vapour rises higher into the atmosphere, it cools and condenses back into tiny water droplets, forming clouds. The higher it rises, the cooler it gets.</p>
+        </div>
+        <div style="padding: 1.2rem; background: rgba(139,107,168,0.1); border-left: 3px solid #8b6ba8; border-radius: 6px;">
+          <strong style="color: #8b6ba8; font-size: 1.05rem;">3. Precipitation</strong>
+          <p style="margin-top: 0.5rem;">When water droplets in clouds become too heavy, they fall back to Earth as rain, snow, or hail. The water returns to the surface and the cycle begins again.</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(201,149,58,0.08); border-radius: 6px;">
+        <strong>Classroom experiment:</strong> You recreated the water cycle using a zip-lock bag filled with water and blue food dye, taped to a window. Over the school week, evaporation and condensation happened right before your eyes — the bag sweated water droplets, just like clouds forming in the atmosphere.
+      </p>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-badge">WA Geography</span>
+      <h3>Why Does Western Australia Have the Best Climate?</h3>
+    </div>
+    <div class="week-content">
+      <p>Perth sits at 31 degrees south — the same latitude as the world's great deserts. So why isn't it one?</p>
+
+      <div style="margin-top: 1.5rem;">
+        <p><strong>The Horse Latitudes (30–45° North and South)</strong></p>
+        <p style="margin-top: 0.5rem; color: var(--text-secondary);">At these latitudes, there is almost no energy or pressure in the air, creating very little rain. Too far from the poles for fast rotation-driven winds, too far from the tropics for cyclones — it is a zone of dead calm. Almost all the world's deserts sit here: the Sahara and Namib in Africa, the Atacama in South America, Death Valley in North America.</p>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <p><strong>The Leeuwin Current — WA's Secret Weapon</strong></p>
+        <p style="margin-top: 0.5rem; color: var(--text-secondary);">Western Australia bucks this trend because of the <strong style="color: var(--text-primary);">Leeuwin Current</strong> — the longest coastal ocean current in the world. It flows from Indonesia, wraps around Cape Leeuwin in Augusta, and travels all the way to Tasmania. It is also one of the fastest currents on Earth, carrying enormous amounts of warm energy.</p>
+        <p style="margin-top: 0.8rem; color: var(--text-secondary);">This warm current evaporates seawater into massive rain clouds and creates large storm fronts — known as <strong style="color: var(--text-primary);">frontal rainfall</strong>. This accounts for roughly 80% of all rain in Western Australia.</p>
+        <p style="margin-top: 0.8rem; color: var(--text-secondary);">The current begins in early autumn and drives not just rainfall, but entire ecosystems — providing breeding grounds for whales, salmon, and crayfish, and making the South-West's Karri and Jarrah forests possible at a latitude where deserts should exist.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-badge">Indigenous Knowledge</span>
+      <h3>The Noongar Seasons</h3>
+    </div>
+    <div class="week-content">
+      <p>The Noongar people — the traditional custodians of the South-West — have understood the Leeuwin Current for tens of thousands of years. Their six-season calendar is shaped entirely by it:</p>
+
+      <div style="margin-top: 1.5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
+        <div style="padding: 1rem; background: var(--navy-light); border-radius: 8px; border-left: 3px solid var(--gold);">
+          <strong style="color: var(--gold-light);">Djeran (Autumn)</strong>
+          <p style="font-size: 0.85rem; margin-top: 0.4rem;">The current begins. Cooler weather arrives and people move away from the coast into the forests.</p>
+        </div>
+        <div style="padding: 1rem; background: var(--navy-light); border-radius: 8px; border-left: 3px solid #4a90a4;">
+          <strong style="color: #4a90a4;">Makuru (Winter)</strong>
+          <p style="font-size: 0.85rem; margin-top: 0.4rem;">The heaviest rainfall. Animals gather and breeding begins.</p>
+        </div>
+        <div style="padding: 1rem; background: var(--navy-light); border-radius: 8px; border-left: 3px solid #4a8f6a;">
+          <strong style="color: #4a8f6a;">Djilba (Early Spring)</strong>
+          <p style="font-size: 0.85rem; margin-top: 0.4rem;">Rainfall replenishes the soil. Wildflowers bloom across the continent.</p>
+        </div>
+        <div style="padding: 1rem; background: var(--navy-light); border-radius: 8px; border-left: 3px solid #8b6ba8;">
+          <strong style="color: #8b6ba8;">Kambarang (Spring)</strong>
+          <p style="font-size: 0.85rem; margin-top: 0.4rem;">The current slows. Native reptiles return. People migrate back to the coast.</p>
+        </div>
+        <div style="padding: 1rem; background: var(--navy-light); border-radius: 8px; border-left: 3px solid #c47a3a;">
+          <strong style="color: #c47a3a;">Birak (Early Summer)</strong>
+          <p style="font-size: 0.85rem; margin-top: 0.4rem;">A season of fishing and hunting along the coast.</p>
+        </div>
+        <div style="padding: 1rem; background: var(--navy-light); border-radius: 8px; border-left: 3px solid #d45a4a;">
+          <strong style="color: #d45a4a;">Bunuru (Summer)</strong>
+          <p style="font-size: 0.85rem; margin-top: 0.4rem;">The hottest part of the year. Crabs grow to their largest. The current is about to begin again.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-badge">SPICESS Connections</span>
+      <h3>How the Leeuwin Current Connects to Our Concepts</h3>
+    </div>
+    <div class="week-content">
+      <p>The Leeuwin Current is a perfect case study for all seven SPICESS concepts:</p>
+
+      <ul style="margin-top: 1.5rem;">
+        <li><strong>Space:</strong> Where rain fell shaped how WA organised itself into towns — the South-West and Wheatbelt became the most productive areas.</li>
+        <li><strong>Place:</strong> The meaning of the South-West has been shaped by the current for tens of thousands of years, forming the boundaries of Whadjuk Noongar country.</li>
+        <li><strong>Interconnection:</strong> Indigenous Australians migrated based on the current. It also provided lumber and farming seasons for early settlers.</li>
+        <li><strong>Change:</strong> Climate change is altering the current. The Indian Ocean Dipole can cool the ocean, reducing rainfall and increasing drought — changing how and where people live.</li>
+        <li><strong>Environment:</strong> The current creates the environment that makes Karri and Jarrah forests possible at a latitude where deserts should exist.</li>
+        <li><strong>Sustainability:</strong> Some sections of the Leeuwin Current are World Heritage Sites because of their importance to whale breeding.</li>
+        <li><strong>Scale:</strong> The current affects things locally (Perth's rainfall), nationally (WA's economy and forests), and internationally (whale migration routes).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="week-card">
+    <div class="week-header">
+      <span class="week-badge">Extension</span>
+      <h3>Extension Reading</h3>
+    </div>
+    <div class="week-content">
+      <p>Your teacher has written an extension reading about the Leeuwin Current and the South-West of WA — exploring the landscape through literature, the Noongar seasons, and the deep history of this part of Australia. It's available on Compass.</p>
+      <p style="margin-top: 1rem; padding: 1rem; background: rgba(201,149,58,0.08); border-radius: 6px;">
+        <strong>Forced Analogy task:</strong> According to PACER, when we learn <em>conceptual</em> information, we must connect it to something we already know. In pairs or threes, create a brainstorm that compares the water cycle and evaporation to another subject of your choice. Your teacher will model this first.
+      </p>
+    </div>
+  </div>
+
+</section>
+
 <!-- UNIT OUTLINE -->
 <div class="divider"></div>
 <section class="section" id="outline">
@@ -732,6 +972,62 @@
   </div>
 </section>
 
+<!-- RESOURCES -->
+<div class="divider"></div>
+<section class="section" id="resources">
+  <div class="section-header">
+    <div class="section-label">Resources</div>
+    <h2>All Course Resources</h2>
+    <p>Download study notes, mind maps, and reference sheets for every week of the term.</p>
+  </div>
+
+  <div class="resources-grid">
+
+    <div class="resource-card">
+      <span class="res-week">Week 2</span>
+      <span class="res-title">SPICESS Notes</span>
+      <p class="res-desc">Detailed notes on all seven geographical concepts — Space, Place, Interconnection, Change, Environment, Sustainability, Scale.</p>
+      <a href="resources/SPICESS.pdf" download class="download-btn-outline">⬇ Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="res-week">Week 3</span>
+      <span class="res-title">Types of Maps &amp; BOLTSS</span>
+      <p class="res-desc">Reference guide covering physical, political, topographic, thematic, choropleth maps and the six essential BOLTSS features.</p>
+      <a href="resources/TYPES_OF_MAPS_AND_BOLTSS.pdf" download class="download-btn-outline">⬇ Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="res-week">Week 3</span>
+      <span class="res-title">Grid &amp; Area Referencing</span>
+      <p class="res-desc">Step-by-step guide to four-figure area references (AR) and six-figure grid references (GR) with worked examples.</p>
+      <a href="resources/Grid_and_Area_Referencing.pdf" download class="download-btn-outline">⬇ Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="res-week">Week 4</span>
+      <span class="res-title">How Do We Measure Liveability?</span>
+      <p class="res-desc">Notes on objective and subjective liveability factors, EIU rankings, and what makes cities liveable worldwide.</p>
+      <a href="resources/how_do_we_measure_liveability.pdf" download class="download-btn-outline">⬇ Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="res-week">Week 4</span>
+      <span class="res-title">Liveability Mind Map</span>
+      <p class="res-desc">Visual mind map summarising subjective and objective liveability factors — great for quick revision before the CAT.</p>
+      <a href="resources/LIVEABILITY.pdf" download class="download-btn-outline">⬇ Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="res-week">Full Term</span>
+      <span class="res-title">Unit Outline</span>
+      <p class="res-desc">Complete 9-week program with all learning intentions, vocabulary, textbook references, and assessment details.</p>
+      <a href="Year_7_Geography_Unit_Outline.docx" download class="download-btn-outline">⬇ Download DOCX</a>
+    </div>
+
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -743,7 +1039,7 @@
 
 <script>
 // Navigation active state
-const sections = ['contents', 'dates', 'vocab', 'week1', 'week2', 'week3', 'week4', 'outline'];
+const sections = ['contents', 'dates', 'vocab', 'week1', 'week2', 'week3', 'week4', 'week7', 'outline', 'resources'];
 const navLinks = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
